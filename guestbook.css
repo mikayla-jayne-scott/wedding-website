@@ -1,0 +1,23 @@
+.guestbook{background:var(--navy);color:#fff}
+.guestbook .section-heading>p:last-child{max-width:470px;margin:0 auto;color:#dbeaff}
+.guestbook .eyebrow{color:var(--orange)}
+.guestbook-layout{max-width:1040px;margin:58px auto 0;display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+.guestbook-form{display:grid;gap:10px;padding:38px;background:#fff;color:var(--ink)}
+.guestbook-form label{margin-top:7px;font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.guestbook-form label span{color:#7891a0;font-weight:400}
+.guestbook-form input,.guestbook-form textarea{width:100%;padding:13px 0;border:0;border-bottom:1px solid rgba(79,147,184,.45);border-radius:0;background:transparent;color:var(--ink);font:inherit;outline:none}
+.guestbook-form textarea{min-height:125px;resize:vertical}
+.guestbook-form input:focus,.guestbook-form textarea:focus{border-color:var(--magenta)}
+.guestbook-form button{justify-self:start;margin-top:17px;padding:14px 20px;border:0;background:var(--magenta);color:#fff;cursor:pointer;font:600 9px Manrope,Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.guestbook-form button:hover{background:var(--orange)}
+.guestbook-form button:disabled{cursor:wait;opacity:.65}
+.guestbook-form button b{margin-left:9px;font-size:15px}
+.guestbook-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important}
+.guestbook-status{min-height:22px;color:#668293;font-size:10px}
+.guestbook-notes{max-height:460px;overflow:auto;display:grid;gap:13px;padding-right:10px}
+.guestbook-notes blockquote{margin:0;padding:24px 27px;background:rgba(255,255,255,.1);border-left:2px solid var(--orange)}
+.guestbook-notes blockquote p{font-family:'Bodoni Moda',Georgia,serif;font-size:19px;line-height:1.5}
+.guestbook-notes cite{display:block;margin-top:13px;color:#ffd0a3;font-size:8px;font-style:normal;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.guestbook-loading,.guestbook-empty{padding:25px;color:#dbeaff;text-align:center}
+@media(max-width:850px){.guestbook-layout{grid-template-columns:1fr;gap:35px}.guestbook-notes{max-height:390px}}
+@media(max-width:560px){.guestbook-layout{margin-top:40px}.guestbook-form{padding:27px}.guestbook-notes blockquote{padding:20px}.guestbook-notes blockquote p{font-size:17px}}
