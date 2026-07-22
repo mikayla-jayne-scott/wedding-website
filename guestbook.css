@@ -21,3 +21,14 @@
 .guestbook-loading,.guestbook-empty{padding:25px;color:#dbeaff;text-align:center}
 @media(max-width:850px){.guestbook-layout{grid-template-columns:1fr;gap:35px}.guestbook-notes{max-height:390px}}
 @media(max-width:560px){.guestbook-layout{margin-top:40px}.guestbook-form{padding:27px}.guestbook-notes blockquote{padding:20px}.guestbook-notes blockquote p{font-size:17px}}
+
+/* Keep compact guestbook text comfortably readable. */
+.guestbook-form label,
+.guestbook-form button {
+  font-size: 11px;
+}
+
+.guestbook-status,
+.guestbook-notes cite {
+  font-size: 12px;
+}

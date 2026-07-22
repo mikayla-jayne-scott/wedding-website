@@ -32,34 +32,36 @@ document.querySelectorAll('.memory-card').forEach(card => card.addEventListener(
   card.setAttribute('aria-pressed', String(flipped));
 }));
 
-const initialAdventureImages = [
-  ['photos/Adventures/Graduation.jpeg', '3 / 4'],
-  ['photos/Adventures/Barcelona.jpeg', '1932 / 1626'],
-  ['photos/Adventures/Hiking.jpeg', '4 / 3'],
-  ['photos/Adventures/Skiing.jpeg', '3 / 4'],
-  ['photos/Adventures/MackinacIsland.jpeg', '1812 / 1536'],
-  ['photos/Adventures/OffRoading.jpeg', '3 / 4']
+const initialAdventures = [
+  ['Kayla\'s Graduation', 'After years of research and hard work Kayla finally graduated with her Doctorate of Engineering. We celebrated in Washington DC this past May.', 'photos/Adventures/Graduation.jpeg', '3 / 4'],
+  ['Spain', 'Spain was an absolute dream, although Jeremy almost did cause an international incident on a bike. Ask Jordan about it!', 'photos/Adventures/Barcelona.jpeg', '1932 / 1626'],
+  ['Hiking at Home', 'Just north of us there are some great trails to explore especially in the fall when the leaves are changing. Rex almost pulled Jeremy down the mountain, he\'s a better hiker than the both of us.', 'photos/Adventures/Hiking.jpeg', '4 / 3'],
+  ['Skiing', 'Jeremy learned how to ski! He\'s a natural, literally skiied into the rental return.', 'photos/Adventures/Skiing.jpeg', '3 / 4'],
+  ['Mackinac Island', 'Every summer we bike the island, we even took Scott and Karla with us one year! This year we skipped the biking and swapped it for engagement photos.', 'photos/Adventures/MackinacIsland.jpeg', '1812 / 1536'],
+  ['Drummond Island', 'We spend a lot of time on Drummond Island, exploring the trails, enjoying the lake and being around family! Ask Scott about the Tank Traps!', 'photos/Adventures/OffRoading.jpeg', '3 / 4']
 ];
-document.querySelectorAll('.memory-card .memory-front').forEach((front, index) => {
-  const [image, ratio] = initialAdventureImages[index] || [];
-  if (image) {
-    front.closest('.memory-card').style.setProperty('--card-ratio', ratio);
-    front.insertAdjacentHTML('afterbegin', `<img class="memory-photo" src="${image}" alt="Adventure memory ${index + 1}">`);
-  }
+document.querySelectorAll('.memory-card').forEach((card, index) => {
+  const [title, memory, image, ratio] = initialAdventures[index] || [];
+  if (!image) return;
+
+  card.style.setProperty('--card-ratio', ratio);
+  card.querySelector('.memory-front').insertAdjacentHTML('afterbegin', `<img class="memory-photo" src="${image}" alt="${title}">`);
+  card.querySelector('.memory-back b').textContent = title;
+  card.querySelector('.memory-back small').textContent = memory;
 });
 
 const extraAdventures = [
-  ['Turks & Caicos', 'A favorite sun-soaked escape.', 'photos/Adventures/TurksAndCaicos.jpeg', '4 / 3'],
-  ['Snorkeling', 'A little adventure beneath the surface.', 'photos/Adventures/Snorkeling.png', '1504 / 1113'],
-  ['Caribbean', 'Warm water and sunshine together.', 'photos/Adventures/Carribbean.jpeg', '4 / 3'],
-  ['Christmas', 'One of our coziest traditions.', 'photos/Adventures/Christmas.jpeg', '4 / 3'],
-  ['Lisbon', 'Pastéis, tiled streets, and so much color.', 'photos/Adventures/Lisbon.jpeg', '3 / 4'],
-  ['Rome', 'A very good excuse for a long walk and pasta.', 'photos/Adventures/Rome.jpeg', '4 / 3'],
-  ['Puerto Rico', 'Warm water and sunshine together.', 'photos/Adventures/PuertoRico.jpeg', '3 / 4'],
-  ['University of Michigan', 'A chapter we will always be grateful for.', 'photos/Adventures/UniversityOfMichigan.jpeg', '2041 / 1439'],
-  ['Amalfi Coast', 'A view we will never forget.', 'photos/Adventures/AlmalfiCoast.jpeg', '992 / 792'],
-  ['Snowshoeing', 'A winter adventure worth bundling up for.', 'photos/Adventures/SnowShoeing.png', '3 / 4'],
-  ['Studying', 'Making even the ordinary days an adventure.', 'photos/Adventures/Studying.jpeg', '4 / 3']
+  ['Turks & Caicos', 'Nothing like the crystal-clear waters and pristine beaches to celebrate Jeremy\'s 30th birthday!', 'photos/Adventures/TurksAndCaicos.jpeg', '4 / 3'],
+  ['Saint John', 'We (+Nana) went snorkeling at the Virgin Islands National Park Underwater Snorkeling Trail. After a sketchy taxi ride we saw the most incredible fish, boats and views.', 'photos/Adventures/Snorkeling.png', '1504 / 1113'],
+  ['St. Thomas', 'If there is one thing you can count on, Kayla will get a picutre of the sun setting! This past year the sunset over the caribbean was absolutely breathtaking.', 'photos/Adventures/Carribbean.jpeg', '4 / 3'],
+  ['Christmas', 'Every year we spend christmas on the island then head down to St. Louis to be with the Roger\'s fam!', 'photos/Adventures/Christmas.jpeg', '4 / 3'],
+  ['Lisbon', 'Lisbon was an 7 hills of wonder, great views, peacocks and castles. We absolutely loved it! This is probably our favorite place we have been thus far.', 'photos/Adventures/Lisbon.jpeg', '3 / 4'],
+  ['Rome', 'We think this had to be the hottest day in existance, the tar was melting through the streets! We made it to the Trevi Fountain and even ate at the McDonald\'s in Vatican. The french fries tasted the same.', 'photos/Adventures/Rome.jpeg', '4 / 3'],
+  ['Puerto Rico', 'Peurto Rico is one of our most recent adventures, Jeremy even saw a dolphin!', 'photos/Adventures/PuertoRico.jpeg', '3 / 4'],
+  ['University of Michigan', 'Kayla\'s family may have converted Jeremy into a Wolverine (Like it took that much convincing) after one trip to the big house he was sold.', 'photos/Adventures/UniversityOfMichigan.jpeg', '2041 / 1439'],
+  ['Amalfi Coast', 'We took a train up the almafi coast and had the best gelato and focaccia ever! Jeremy asks that you don\'t ask about his nightmare haircut, he knows it was atrocious.', 'photos/Adventures/AlmalfiCoast.jpeg', '992 / 792'],
+  ['Snowshoeing', 'After a certain number of months of being snowed in, we finally hit the trails.', 'photos/Adventures/SnowShoeing.png', '3 / 4'],
+  ['Studying', 'A lot of our nights over the years have been filled with learning, writing, and napping. Jeremy and Rex are often found in this exact spot.', 'photos/Adventures/Studying.jpeg', '4 / 3']
 ];
 const adventureGrid = document.querySelector('.adventure-grid');
 if (adventureGrid) extraAdventures.forEach(([title, memory, image, ratio], index) => {
@@ -95,6 +97,15 @@ const ferryTab = document.querySelector('[data-travel-tab="ferry-guide"]');
 const travelTabList = document.querySelector('.travel-tabs');
 if (travelTabList && airportTab && bridgeTab && ferryTab) travelTabList.append(airportTab, bridgeTab, ferryTab);
 if (airportTab) airportTab.click();
+
+const airportList = document.querySelector('.airport-list');
+const airportOrder = ['CIU', 'YAM', 'PLN', 'TVC', 'DTW'];
+if (airportList) {
+  const airportsByCode = new Map(
+    [...airportList.children].map(airport => [airport.querySelector('b').textContent, airport])
+  );
+  airportOrder.forEach(code => airportList.append(airportsByCode.get(code)));
+}
 
 const directionLinks = [
   ['#ferry-guide .text-link', 'https://www.google.com/maps/dir/?api=1&destination=Drummond+Island+Ferry%2C+De+Tour+Village%2C+MI', 'Get directions to the ferry'],
@@ -134,6 +145,33 @@ document.querySelectorAll('.timeline .event').forEach((event, index) => {
   const venue = event.querySelector('p');
   const destination = timelineDestinations[index];
   if (venue && destination) venue.insertAdjacentHTML('afterend', `<a class="directions-link timeline-directions" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}" target="_blank" rel="noreferrer">Directions <b>↗</b></a>`);
+});
+
+const dinnerMenuDialog = document.createElement('dialog');
+dinnerMenuDialog.className = 'dinner-menu-dialog';
+dinnerMenuDialog.innerHTML = `
+  <button class="dinner-menu-close" type="button" aria-label="Close dinner menu">×</button>
+  <div class="dinner-menu-copy">
+    <p class="eyebrow">Saturday evening</p>
+    <h2>Dinner Menu</h2>
+    <div class="gold-rule"></div>
+    <p class="dinner-menu-placeholder">Our dinner selections are coming soon.</p>
+    <p>Check back closer to the celebration to see what will be served.</p>
+    <p class="dinner-caterer">A farm-to-table dinner thoughtfully prepared by <a href="https://www.jerefarms.com/" target="_blank" rel="noreferrer">Jere Farms <b>↗</b></a></p>
+  </div>`;
+document.body.append(dinnerMenuDialog);
+
+const receptionEvent = document.querySelectorAll('.timeline .event')[3];
+if (receptionEvent) {
+  receptionEvent.querySelector('div').insertAdjacentHTML('beforeend', '<button class="directions-link timeline-directions playlist-link dinner-menu-trigger" type="button">View dinner menu <b>↗</b></button>');
+  receptionEvent.querySelector('.dinner-menu-trigger').addEventListener('click', () => {
+    dinnerMenuDialog.showModal();
+    dinnerMenuDialog.querySelector('.dinner-menu-close').focus();
+  });
+}
+
+dinnerMenuDialog.addEventListener('click', event => {
+  if (event.target === dinnerMenuDialog || event.target.closest('.dinner-menu-close')) dinnerMenuDialog.close();
 });
 
 // Wedding-party profiles: replace the prompts below with each person's real details.
