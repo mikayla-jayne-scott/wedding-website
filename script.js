@@ -31,13 +31,16 @@ const landingPageImages = [
   'photos/LandingPageImages/web/Mikayla+Jeremy-102.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-112.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-114.jpg',
+  'photos/LandingPageImages/web/Mikayla+Jeremy-118.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-129.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-142.jpg',
+  'photos/LandingPageImages/web/Mikayla+Jeremy-153.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-27.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-63.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-67.jpg',
   'photos/LandingPageImages/web/Mikayla+Jeremy-86.jpg',
-  'photos/LandingPageImages/web/Mikayla+Jeremy-91.jpg'
+  'photos/LandingPageImages/web/Mikayla+Jeremy-91.jpg',
+  'photos/LandingPageImages/web/Mikayla+Jeremy-99.jpg'
 ];
 const heroSlides = [...document.querySelectorAll('.hero-slide')];
 

@@ -16,7 +16,7 @@
 .guestbook-status{min-height:22px;color:#668293;font-size:10px}
 .guestbook-notes{max-height:460px;overflow:auto;display:grid;gap:13px;padding-right:10px}
 .guestbook-notes blockquote{margin:0;padding:24px 27px;background:rgba(255,255,255,.1);border-left:2px solid var(--orange)}
-.guestbook-notes blockquote p{font-family:'Bodoni Moda',Georgia,serif;font-size:19px;line-height:1.5}
+.guestbook-notes blockquote p{font-family:'Bodoni Cyrillic',Georgia,serif;font-size:19px;line-height:1.5}
 .guestbook-notes cite{display:block;margin-top:13px;color:#ffd0a3;font-size:8px;font-style:normal;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
 .guestbook-loading,.guestbook-empty{padding:25px;color:#dbeaff;text-align:center}
 @media(max-width:850px){.guestbook-layout{grid-template-columns:1fr;gap:35px}.guestbook-notes{max-height:390px}}
